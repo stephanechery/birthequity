@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indiana Birth Equity Doula Collective — Market Analysis & Strategic Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FFFDF9;
+    --charcoal: #1C1C1E;
+    --muted: #5A5A5A;
+    --accent: #C05A2A;
+    --accent-light: #F0B49A;
+    --accent-muted: #F5DDD0;
+    --sage: #5B7B6F;
+    --sage-light: #D6E8E1;
+    --terracotta: #A0462A;
+    --gold: #C9900C;
+    --gold-light: #FDF3D6;
+    --border: #E8E0D5;
+    --shadow: rgba(28,28,30,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links a:hover {
+    background: var(--accent-muted);
+    color: var(--accent);
+  }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--charcoal);
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #1C1C1E 0%, #2C2416 60%, #3D2E1A 100%);
+    color: var(--cream);
+    padding: 6rem 2rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(192,90,42,0.25) 0%, transparent 65%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(192,90,42,0.15);
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 0.6; }
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(192,90,42,0.2);
+    border: 1px solid rgba(192,90,42,0.4);
+    color: var(--accent-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    max-width: 780px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-light);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(250,247,242,0.75);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-stat .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    line-height: 1;
+  }
+
+  .hero-stat .label {
+    font-size: 0.75rem;
+    color: rgba(250,247,242,0.6);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+    font-weight: 500;
+  }
+
+  /* ── EXEC SUMMARY ── */
+  .exec-summary {
+    background: var(--accent);
+    color: var(--cream);
+    padding: 3.5rem 2rem;
+  }
+
+  .exec-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .exec-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .exec-label span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .exec-text p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(250,247,242,0.9);
+    margin-bottom: 1rem;
+  }
+
+  .exec-text p:last-child { margin-bottom: 0; }
+
+  /* ── SECTION WRAPPERS ── */
+  .section {
+    padding: 4.5rem 2rem;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-alt { background: var(--warm-white); }
+  .section-dark {
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+  .section-sage { background: var(--sage-light); }
+  .section-gold { background: var(--gold-light); }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-dark .section-tag { color: var(--accent-light); }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-dark .section-title { color: var(--cream); }
+
+  .section-lead {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  .section-dark .section-lead { color: rgba(250,247,242,0.65); }
+
+  /* ── CARDS ── */
+  .card-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card-grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+  .card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px var(--shadow);
+  }
+
+  .card-dark {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.1);
+    color: var(--cream);
+  }
+
+  .card-accent {
+    background: var(--accent-muted);
+    border-color: var(--accent-light);
+  }
+
+  .card-sage {
+    background: var(--sage-light);
+    border-color: var(--sage);
+  }
+
+  .card-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .card p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .card-dark p { color: rgba(250,247,242,0.65); }
+  .card-dark h3 { color: var(--cream); }
+
+  /* ── STAT PILLS ── */
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .stat-pill {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    min-width: 140px;
+    flex: 1;
+  }
+
+  .stat-pill .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-pill .desc {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .stat-pill .source {
+    font-size: 0.68rem;
+    color: #9A9A9A;
+    margin-top: 0.25rem;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ── TABLES ── */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    margin: 1.5rem 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+  }
+
+  th {
+    background: var(--charcoal);
+    color: var(--cream);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: rgba(28,28,30,0.02); }
+
+  /* ── PESTEL / SWOT GRID ── */
+  .pestel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .pestel-card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid;
+  }
+
+  .pestel-card.P { background: #FFF5F0; border-color: #E05A2A; }
+  .pestel-card.E { background: #F0F5FF; border-color: #2A5AE0; }
+  .pestel-card.S { background: #F0FFF5; border-color: #2AE05A; }
+  .pestel-card.T { background: #FFF0F5; border-color: #E02A5A; }
+  .pestel-card.En { background: #F5F0FF; border-color: #5A2AE0; }
+  .pestel-card.L { background: #FFFFF0; border-color: #E0E02A; }
+
+  .pestel-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .pestel-card h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .pestel-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .pestel-card ul li {
+    font-size: 0.83rem;
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+    color: var(--charcoal);
+  }
+
+  .pestel-card ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+  }
+
+  /* ── SWOT ── */
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .swot-card {
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .swot-card.S { background: #EDF7EE; border: 1px solid #8BC98E; }
+  .swot-card.W { background: #FFF3ED; border: 1px solid #FFBA98; }
+  .swot-card.O { background: #EDF4FF; border: 1px solid #98C0FF; }
+  .swot-card.T { background: #FFF0F0; border: 1px solid #FFB0B0; }
+
+  .swot-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .swot-card.S .swot-label { color: #1A7D1E; }
+  .swot-card.W .swot-label { color: #C05A00; }
+  .swot-card.O .swot-label { color: #1A4E9F; }
+  .swot-card.T .swot-label { color: #9F1A1A; }
+
+  .swot-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .swot-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .swot-card ul li {
+    font-size: 0.83rem;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .swot-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+  }
+
+  /* ── ECOSYSTEM MAP ── */
+  .ecosystem {
+    position: relative;
+  }
+
+  .eco-center {
+    background: var(--accent);
+    color: var(--cream);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin: 1.5rem auto;
+    max-width: 300px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(192,90,42,0.3);
+  }
+
+  .eco-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+
+  .eco-node {
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 130px;
+    max-width: 160px;
+    border: 2px solid;
+    transition: transform 0.2s;
+  }
+
+  .eco-node:hover { transform: scale(1.03); }
+
+  .eco-node.clinical { background: #EDF4FF; border-color: #5B95E0; color: #1A3A7A; }
+  .eco-node.medicaid { background: #EDF7EE; border-color: #5BAB65; color: #1A5A1E; }
+  .eco-node.public { background: #FFF3ED; border-color: #E08B5B; color: #7A3010; }
+  .eco-node.phil { background: #F5EDFF; border-color: #9B5BE0; color: #3A107A; }
+  .eco-node.employer { background: #FFFDED; border-color: #C0A02A; color: #5A4000; }
+
+  .eco-arrow {
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .eco-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .eco-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .eco-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── CHART CONTAINERS ── */
+  .chart-container {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .chart-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--charcoal);
+  }
+
+  canvas { max-height: 320px; }
+
+  /* ── LOGIC CHAIN ── */
+  .logic-chain {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    overflow-x: auto;
+    padding: 1rem 0;
+  }
+
+  .logic-step {
+    flex: 1;
+    min-width: 160px;
+    text-align: center;
+    position: relative;
+  }
+
+  .logic-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    right: -12px;
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+    z-index: 1;
+  }
+
+  .logic-box {
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0 0.75rem;
+    border: 2px solid;
+    position: relative;
+  }
+
+  .logic-box.inputs { background: #EDF4FF; border-color: #5B95E0; }
+  .logic-box.activities { background: #FFF3ED; border-color: #E08B5B; }
+  .logic-box.outputs { background: #EDF7EE; border-color: #5BAB65; }
+  .logic-box.outcomes { background: #F5EDFF; border-color: #9B5BE0; }
+
+  .logic-type {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .logic-box.inputs .logic-type { color: #1A3A7A; }
+  .logic-box.activities .logic-type { color: #7A3010; }
+  .logic-box.outputs .logic-type { color: #1A5A1E; }
+  .logic-box.outcomes .logic-type { color: #3A107A; }
+
+  .logic-box ul {
+    list-style: none;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .logic-box ul li { margin-bottom: 0.25rem; padding-left: 0.75rem; position: relative; }
+  .logic-box ul li::before { content: '›'; position: absolute; left: 0; }
+
+  /* ── UNIT ECONOMICS ── */
+  .unit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .unit-card {
+    border-radius: 10px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+
+  .unit-card h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .unit-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.83rem;
+  }
+
+  .unit-row:last-child { border-bottom: none; font-weight: 600; }
+
+  .unit-row .amt { font-family: 'DM Mono', monospace; font-size: 0.85rem; }
+
+  .amt.pos { color: var(--sage); }
+  .amt.neg { color: var(--terracotta); }
+  .amt.total { color: var(--charcoal); font-weight: 700; }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .badge-green { background: #DFFFDE; color: #1A5A1E; }
+  .badge-red { background: #FFE0DE; color: #7A1A1A; }
+  .badge-blue { background: #DEE8FF; color: #1A2A7A; }
+  .badge-amber { background: #FFF3DE; color: #7A4A00; }
+
+  /* ── RISK TABLE ── */
+  .risk-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    color: rgba(250,247,242,0.6);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+
+  footer strong { color: var(--cream); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--border); padding: 1rem; z-index: 99; }
+    .hamburger { display: block; }
+    .exec-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    .swot-grid { grid-template-columns: 1fr; }
+    .logic-chain { flex-direction: column; gap: 1rem; }
+    .logic-step::after { display: none; }
+    .hero-stats { gap: 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    .section { padding: 3rem 1rem; }
+    .hero { padding: 4rem 1rem 3rem; }
+    .exec-summary { padding: 2.5rem 1rem; }
+  }
+
+  /* ── INLINE NOTE ── */
+  .note {
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    color: #5A4000;
+    margin: 1rem 0;
+    font-style: italic;
+  }
+
+  .note strong { font-style: normal; color: var(--gold); }
+
+  /* ── WORKFORCE LADDER ── */
+  .ladder {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 480px;
+  }
+
+  .rung {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+
+  .rung-level {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .rung:nth-child(1) { background: #F0FFF4; }
+  .rung:nth-child(1) .rung-level { background: #C8F0CE; color: #1A5A1E; }
+  .rung:nth-child(2) { background: #F0F5FF; }
+  .rung:nth-child(2) .rung-level { background: #C8D8FF; color: #1A2A7A; }
+  .rung:nth-child(3) { background: #FFF8F0; }
+  .rung:nth-child(3) .rung-level { background: #FFD8B0; color: #7A3010; }
+  .rung:nth-child(4) { background: #FFF0FF; }
+  .rung:nth-child(4) .rung-level { background: #E8C0FF; color: #5A007A; }
+  .rung:nth-child(5) { background: #FFF0F0; }
+  .rung:nth-child(5) .rung-level { background: #FFB8B8; color: #7A0000; }
+
+  .rung-info { flex: 1; }
+  .rung-title { font-weight: 600; margin-bottom: 0.1rem; }
+  .rung-wage { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--muted); }
+
+  /* Scroll animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">Indiana Birth Equity Doula Collective</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#need">Need</a></li>
+      <li><a href="#policy">Policy</a></li>
+      <li><a href="#landscape">Landscape</a></li>
+      <li><a href="#pestel">PESTEL</a></li>
+      <li><a href="#swot">SWOT</a></li>
+      <li><a href="#ecosystem">Ecosystem</a></li>
+      <li><a href="#model">Model</a></li>
+      <li><a href="#workforce">Workforce</a></li>
+      <li><a href="#economics">Economics</a></li>
+      <li><a href="#risks">Risks</a></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">📍 Marion County, Indiana · Statewide Context · 2025–2027</div>
+    <h1>Rebuilding <em>Birth Equity</em> Through Community-Based Doula Care</h1>
+    <p class="hero-sub">A comprehensive market analysis and strategic plan for a community-based doula organization addressing Indiana's maternal-infant health crisis, workforce gaps, and systemic inequities.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="number">3.1×</span>
+        <span class="label">Black vs. white maternal mortality rate in Indiana</span>
+      </div>
+      <div class="hero-stat">
+        <span class="number">14.1%</span>
+        <span class="label">Marion Co. preterm birth rate (vs. 10.5% national avg.)</span>
+      </div>
+      <div class="hero-stat">
+        <span class="number">$3,500</span>
+        <span class="label">Est. Medicaid savings per doula-supported birth</span>
+      </div>
+      <div class="hero-stat">
+        <span class="number">40%</span>
+        <span class="label">C-section reduction with continuous doula support</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXECUTIVE SUMMARY ── -->
+<section class="exec-summary" id="exec">
+  <div class="exec-inner">
+    <div class="exec-label">
+      <span>Executive Summary</span>
+      For Grant Reviewers
+    </div>
+    <div class="exec-text">
+      <p><strong>Need:</strong> Marion County, Indiana's most populous county (930,000+ residents), faces a maternal and infant health crisis concentrated among Black, low-income, and Medicaid-enrolled families. Black women in Indiana die from pregnancy-related causes at 3.1× the rate of white women. Marion County's preterm birth rate (14.1%) ranks among the state's worst. These disparities are not inevitable — they reflect structural gaps in high-touch, culturally-aligned support during the perinatal period.</p>
+      <p><strong>Approach:</strong> The Indiana Birth Equity Doula Collective (IBEDC) provides community-based doula services rooted in cultural humility, centering Black, Indigenous, Latina, and low-income birthing people. Our model pairs each client with a trained, certified community doula for 6–8 prenatal visits, continuous labor support, 6+ postpartum visits, lactation navigation, and social needs screening — a proven, evidence-based intervention.</p>
+      <p><strong>Evidence:</strong> Peer-reviewed literature demonstrates that doula support reduces C-sections by up to 40%, preterm births by 22%, and low birthweight by 31%. Medicaid managed care organizations (MCOs) increasingly view doulas as high-ROI members of the perinatal care team, with Indiana now pursuing Medicaid reimbursement pathways.</p>
+      <p><strong>Workforce & Sustainability:</strong> IBEDC trains and employs community members — prioritizing women from the communities most affected — creating living-wage jobs while building a sustainable perinatal workforce pipeline. Revenue diversification across Medicaid MCO contracts, health system partnerships, foundation grants, and public health funding creates a resilient sustainability model with a 3-year path to 60% earned revenue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 1. POPULATION NEED ── -->
+<section class="section" id="need">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">📊 Section 1</div>
+      <h2 class="section-title">Population Need & Health Inequities</h2>
+      <p class="section-lead">Indiana's maternal and infant health outcomes reflect deep structural inequities. Marion County serves as the epicenter, concentrating poverty, obstetric deserts, and health system mistrust among the populations at highest risk.</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-pill">
+        <div class="num">52.7</div>
+        <div class="desc">Black maternal mortality rate per 100K live births, Indiana (2018–2022)</div>
+        <div class="source">Source: IDOH Maternal Mortality Review, 2023 (est.)</div>
+      </div>
+      <div class="stat-pill">
+        <div class="num">17.0</div>
+        <div class="desc">White maternal mortality rate per 100K — a 3.1× racial disparity</div>
+        <div class="source">Source: IDOH, CDC WONDER 2023</div>
+      </div>
+      <div class="stat-pill">
+        <div class="num">14.1%</div>
+        <div class="desc">Marion Co. preterm birth rate vs. 10.5% national average</div>
+        <div class="source">Source: March of Dimes 2023 Report Card</div>
+      </div>
+      <div class="stat-pill">
+        <div class="num">9.8%</div>
+        <div class="desc">Low birthweight rate in Marion Co. among Black infants</div>
+        <div class="source">Source: Indiana IBIS Public Health Data, 2022</div>
+      </div>
+      <div class="stat-pill">
+        <div class="num">60%</div>
+        <div class="desc">Marion Co. births covered by Medicaid — primary payer for most at-risk families</div>
+        <div class="source">Source: IDOH Hospital Discharge Data, 2022 (est.)</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Data note:</strong> Where county-level breakdowns are unavailable, figures represent conservative estimates derived from statewide IDOH data, CDC WONDER, and March of Dimes county health profiles, extrapolated proportionally to Marion County demographics (45% Black population in highest-risk ZIP codes, per ACS 2022).
+    </div>
+
+    <div class="card-grid card-grid-3" style="margin-top:2rem;">
+      <div class="card card-accent">
+        <div class="card-icon">🩺</div>
+        <h3>Maternal Morbidity Drivers</h3>
+        <p>Hemorrhage, hypertensive disorders, infections, and mental health crises account for 80%+ of preventable maternal deaths. Structural barriers — implicit bias in clinical settings, delayed care-seeking, lack of care coordination — amplify risk for Black women.</p>
+      </div>
+      <div class="card card-sage">
+        <div class="card-icon">👶</div>
+        <h3>Infant Health Disparities</h3>
+        <p>Black infants in Marion Co. are 2.4× more likely to be born preterm and face NICU admission rates 35% higher than white infants. Average NICU stay: $3,500–$8,000/day. Early intervention and social support reduce these risks significantly.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏥</div>
+        <h3>Geographic Service Gaps</h3>
+        <p>Marion County's east and northeast quadrants (highest Black/low-income populations) are effectively obstetric deserts post-2020 hospital consolidations. IU Health Methodist closed its labor unit in 2021; Eskenazi Health carries disproportionate safety-net load.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧠</div>
+        <h3>Perinatal Mental Health</h3>
+        <p>1 in 5 birthing people experience perinatal mood and anxiety disorders (PMADs). Black women are less likely to be screened or referred. PHQ-9 and Edinburgh scales now standard — doulas serve as a critical bridge to clinical care.</p>
+      </div>
+      <div class="card card-accent">
+        <div class="card-icon">🤱</div>
+        <h3>Breastfeeding Disparities</h3>
+        <p>Black infants are 20–30% less likely to be breastfed at 6 months. Lactation support — a core doula service — reduces this gap while lowering NICU readmission and respiratory illness rates.</p>
+      </div>
+      <div class="card card-sage">
+        <div class="card-icon">💊</div>
+        <h3>Social Determinants of Risk</h3>
+        <p>Housing instability, food insecurity, intimate partner violence, and lack of transportation are prevalent in high-risk ZIP codes. Doulas trained in social needs screening and community resource navigation address the upstream determinants clinical visits cannot.</p>
+      </div>
+    </div>
+
+    <!-- Chart 1: Disparities by race/ethnicity -->
+    <div class="chart-container fade-in" style="margin-top:2rem;">
+      <div class="chart-title">Marion County: Key Maternal & Infant Health Indicators by Race/Ethnicity (per 1,000 live births or %) — Estimated from IDOH & CDC Data</div>
+      <canvas id="disparitiesChart"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. POLICY & REIMBURSEMENT ── -->
+<section class="section section-alt" id="policy">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">⚖️ Section 2</div>
+      <h2 class="section-title">Policy & Reimbursement Environment</h2>
+      <p class="section-lead">Indiana's Medicaid reimbursement pathway for doulas is emerging but not yet finalized, creating both opportunity and strategic risk. This section maps the current landscape and compliance requirements.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Mechanism</th>
+            <th>Status (Indiana, 2025)</th>
+            <th>Relevant Detail</th>
+            <th>Strategic Implication</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Medicaid FFS Doula Billing</strong></td>
+            <td><span class="badge badge-amber">In Development</span></td>
+            <td>Indiana HB 1007 (2024) directed FSSA to study doula reimbursement. FSSA stakeholder process underway as of 2025. No active billing code yet.</td>
+            <td>Monitor FSSA rulemaking; position for Day 1 enrollment. Peer states (MN, OR, VA) provide reimbursement models at $65–$115/visit.</td>
+          </tr>
+          <tr>
+            <td><strong>Medicaid MCO Contracts</strong></td>
+            <td><span class="badge badge-green">Active Pathway</span></td>
+            <td>Anthem (Hoosier Healthwise), MDwise/Managed Health Services (now CareSource), and Physicians Health Plan of Northern Indiana manage most Medicaid. MCOs can include doula as value-added benefit or enhanced care management service.</td>
+            <td>Direct contracting with MCOs possible now. Value proposition: reduced C-sections, NICU days, and readmissions. Requires QAPI documentation.</td>
+          </tr>
+          <tr>
+            <td><strong>Title V / MIECHV</strong></td>
+            <td><span class="badge badge-green">Active</span></td>
+            <td>Indiana IDOH administers Title V maternal-child health block grant and MIECHV home visiting funds. Both support perinatal workforce development and community programs.</td>
+            <td>Strong alignment; pursue subgrant/subcontract partnerships with existing Title V awardees (e.g., IDOH, local health departments).</td>
+          </tr>
+          <tr>
+            <td><strong>HRSA/MCHB Grants</strong></td>
+            <td><span class="badge badge-green">Active</span></td>
+            <td>HRSA Healthy Start program funds community-based perinatal health work in high-disparity areas. Indianapolis is an eligible site. Workforce training grants available under MCHB.</td>
+            <td>Healthy Start application or partnership is high-priority. Provides both program and workforce funding.</td>
+          </tr>
+          <tr>
+            <td><strong>ARP/ARPA Maternal Health</strong></td>
+            <td><span class="badge badge-amber">Winding Down</span></td>
+            <td>American Rescue Plan extended Medicaid postpartum coverage to 12 months (now permanent). Indiana extended coverage in 2023. Increases eligible client pool.</td>
+            <td>Extended Medicaid eligibility grows the reimbursable client base. Ensure enrollment/reenrollment support is built into services.</td>
+          </tr>
+          <tr>
+            <td><strong>CMS Transforming Maternal Health Model</strong></td>
+            <td><span class="badge badge-blue">Monitor</span></td>
+            <td>CMS launched TMaH Model in 2024, selecting up to 15 states for a 10-year initiative. Indiana may pursue participation; doula services are a supported intervention.</td>
+            <td>If Indiana enters TMaH, strong positioning for bundled support services. Track FSSA/OMPP communications.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; margin:2rem 0 1rem; font-weight:700;">Compliance Considerations</h3>
+    <div class="card-grid card-grid-4">
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Scope of Practice</h3>
+        <p>Indiana does not license doulas. Doulas provide emotional, physical, and informational support — never clinical advice, diagnosis, or procedures. Clear scope-of-practice policies and training are essential.</p>
+      </div>
+      <div class="card card-accent">
+        <div class="card-icon">🔒</div>
+        <h3>HIPAA / Privacy</h3>
+        <p>As a Business Associate or covered entity (if billing), IBEDC must implement HIPAA-compliant data practices. Community-based documentation using EHR-adjacent tools (e.g., Unite Us, Aunt Bertha) requires careful data-sharing agreements.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📝</div>
+        <h3>Documentation Standards</h3>
+        <p>MCOs and health system partners will require standardized visit documentation, outcome data capture, and possibly EHR integration. Invest early in EMR-compatible charting tools.</p>
+      </div>
+      <div class="card card-sage">
+        <div class="card-icon">👥</div>
+        <h3>Supervision Models</h3>
+        <p>Doulas are not licensed practitioners; supervision by a clinical partner (midwife, CNM, or OB) through a formal MOU adds credibility, supports MCO contracting, and creates a quality assurance framework.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. LANDSCAPE ── -->
+<section class="section" id="landscape">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">🗺️ Section 3</div>
+      <h2 class="section-title">Competitive & Collaborator Landscape</h2>
+      <p class="section-lead">Marion County's perinatal ecosystem is underdeveloped relative to need, creating significant white space for a well-positioned community doula organization.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Organization</th>
+            <th>Type</th>
+            <th>Relationship</th>
+            <th>Partnership Pathway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Eskenazi Health</strong></td>
+            <td>Safety-net hospital/FQHC</td>
+            <td>Primary referral & contracting partner</td>
+            <td>MOA for doula program embedded in OB; warm referral from prenatal clinics; possible sub-contract</td>
+          </tr>
+          <tr>
+            <td><strong>IU Health – Methodist Campus</strong></td>
+            <td>Academic medical center</td>
+            <td>Complement + referral</td>
+            <td>Research partnership; doula program for high-risk OB patients; CBE funding avenue</td>
+          </tr>
+          <tr>
+            <td><strong>Community Health Network</strong></td>
+            <td>Health system</td>
+            <td>Complement + referral</td>
+            <td>Community benefit / CHNA investment; co-locate WIC and doula services</td>
+          </tr>
+          <tr>
+            <td><strong>MCPHD (Marion County Health Dept.)</strong></td>
+            <td>Public health</td>
+            <td>Funding partner + co-referral</td>
+            <td>Subgrant for community health worker initiatives; data-sharing for population surveillance</td>
+          </tr>
+          <tr>
+            <td><strong>WIC (IDOH administered)</strong></td>
+            <td>Federal nutrition program</td>
+            <td>Warm referral, co-location</td>
+            <td>Co-locate services at WIC sites; integrate lactation and postpartum support into WIC touchpoints</td>
+          </tr>
+          <tr>
+            <td><strong>Nurse-Family Partnership / Healthy Families Indiana</strong></td>
+            <td>Home visiting</td>
+            <td>Complement (different model)</td>
+            <td>Referral exchange; doulas serve prenatal/birth/early postpartum while NFP focuses on 0–2y; minimal overlap</td>
+          </tr>
+          <tr>
+            <td><strong>Indiana Midwifery & Doula Association</strong></td>
+            <td>Professional association</td>
+            <td>Training partner + advocacy</td>
+            <td>Certification alignment; policy advocacy coalition; shared workforce training events</td>
+          </tr>
+          <tr>
+            <td><strong>Prevail / Raphael Health Center</strong></td>
+            <td>FQHC / behavioral health</td>
+            <td>Complement</td>
+            <td>Warm referral for PMADs; co-location for integrated care model</td>
+          </tr>
+          <tr>
+            <td><strong>Birth Companions Indiana</strong></td>
+            <td>Small doula org (existing)</td>
+            <td>Low-level competitor → potential merger target</td>
+            <td>Explore merger/acquisition or referral coordination; avoid duplicating small organizations</td>
+          </tr>
+          <tr>
+            <td><strong>For-profit doula agencies</strong></td>
+            <td>Private market</td>
+            <td>Market competitor (private-pay clients)</td>
+            <td>Little overlap on Medicaid population; minimal competitive concern</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── PESTEL ── -->
+<section class="section section-alt" id="pestel">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">🌐 Framework Analysis</div>
+      <h2 class="section-title">PESTEL: External Environment</h2>
+      <p class="section-lead">Framework rationale: PESTEL surfaces macro-level forces shaping the operating environment for a community health organization. Combined with SWOT (organizational positioning) and an ecosystem map (relational/financial flows), these three frameworks together provide a complete strategic picture for a doula collective at this stage.</p>
+    </div>
+
+    <div class="pestel-grid fade-in">
+      <div class="pestel-card P">
+        <div class="pestel-letter" style="color:#E05A2A;">P</div>
+        <h4>Political</h4>
+        <ul>
+          <li>Republican-controlled Indiana legislature supportive of workforce development; cautious on new Medicaid spending</li>
+          <li>HB 1007 (2024) directs FSSA to study doula reimbursement — bipartisan opportunity</li>
+          <li>Federal maternal health equity priorities (CMS TMaH, HRSA Healthy Start) provide tailwind regardless of state politics</li>
+          <li>Post-Dobbs policy environment may reduce some reproductive health funding; abortion-adjacent framing should be avoided in state-facing communications</li>
+          <li>Marion County (Indy) is a Democratic-leaning urban county; city government supports health equity initiatives (MCHD, Indy Equity Fund)</li>
+        </ul>
+      </div>
+      <div class="pestel-card E">
+        <div class="pestel-letter" style="color:#2A5AE0;">E</div>
+        <h4>Economic</h4>
+        <ul>
+          <li>Indiana Medicaid (Healthy Indiana Plan) covers ~60% of Marion Co. births; expanding postpartum eligibility (12 months) grows addressable market</li>
+          <li>MCO medical loss ratio rules incentivize value-based contracting with community organizations showing cost savings</li>
+          <li>Nonprofit labor market tight — doula workforce competes with CHW and home visiting roles for bilingual, community-rooted talent</li>
+          <li>Philanthropic environment positive: Lilly Endowment, RWJF, and health system community benefit funds are active in health equity</li>
+          <li>Grant inflation — cost per outcome must remain competitive with home visiting programs (~$4,500–$6,000/family/year)</li>
+        </ul>
+      </div>
+      <div class="pestel-card S">
+        <div class="pestel-letter" style="color:#1A8A2A;">S</div>
+        <h4>Social</h4>
+        <ul>
+          <li>Growing awareness of racism in obstetric care; "birth equity" is a recognized movement with community and funder resonance</li>
+          <li>Black community-led organizations have established trust where hospital systems have failed</li>
+          <li>Generational trauma and medical mistrust among Black and Indigenous families creates demand for culturally-aligned support</li>
+          <li>Social media awareness of doula benefits growing rapidly among Millennial/Gen Z birthing people</li>
+          <li>Hispanic/Latina population in Marion Co. is growing; Spanish-language and bilingual doula capacity is a differentiator</li>
+        </ul>
+      </div>
+      <div class="pestel-card T">
+        <div class="pestel-letter" style="color:#E02A5A;">T</div>
+        <h4>Technological</h4>
+        <ul>
+          <li>Telehealth expansion post-COVID enables remote prenatal check-ins and reduces access barriers</li>
+          <li>EHR integration (Epic, Cerner) increasingly expected by hospital partners and MCOs for documentation and outcomes tracking</li>
+          <li>Social needs screening platforms (Unite Us, Findhelp/Aunt Bertha) enable warm referrals and close the loop on SDOH interventions</li>
+          <li>Remote fetal monitoring tools may expand doula role in high-risk monitoring with appropriate training</li>
+          <li>Data collection for MCO outcomes reporting requires investment in CRM / case management software</li>
+        </ul>
+      </div>
+      <div class="pestel-card En">
+        <div class="pestel-letter" style="color:#5A2AE0;">E</div>
+        <h4>Environmental</h4>
+        <ul>
+          <li>Environmental justice lens: air quality, heat, and water quality in East Indianapolis disproportionately affect pregnancy outcomes</li>
+          <li>Climate-related extreme heat events pose rising risk for pregnant persons in low-income housing without AC</li>
+          <li>Transportation access remains critical — Indy public transit gaps require vehicle mileage reimbursement policies for doulas</li>
+          <li>Opportunity to incorporate environmental health education into doula training curriculum</li>
+        </ul>
+      </div>
+      <div class="pestel-card L">
+        <div class="pestel-letter" style="color:#8A8A00;">L</div>
+        <h4>Legal</h4>
+        <ul>
+          <li>No Indiana law prohibiting or licensing doulas — legal operating environment permissive</li>
+          <li>HIPAA and 42 CFR Part 2 (if serving clients with SUD histories) govern data sharing — requires legal review of MOUs</li>
+          <li>Nonprofit corporate governance and 501(c)(3) compliance requirements for grant receipt</li>
+          <li>Employment law: doula classification as employee vs. independent contractor has tax and liability implications; employee model preferred for MCO contracting</li>
+          <li>Emerging state licensure discussions in some states — monitor for potential Indiana action</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SWOT ── -->
+<section class="section" id="swot">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">⚡ Section 5</div>
+      <h2 class="section-title">SWOT: Organizational Positioning</h2>
+      <p class="section-lead">SWOT analysis positions IBEDC within the competitive and collaborative landscape, identifying where organizational strengths align with market opportunities.</p>
+    </div>
+
+    <div class="swot-grid">
+      <div class="swot-card S">
+        <div class="swot-label">✓ Strengths</div>
+        <h3>Internal Advantages</h3>
+        <ul>
+          <li>Culturally-rooted leadership — founders from affected communities</li>
+          <li>Community trust developed through grassroots organizing</li>
+          <li>Low-barrier, high-touch service model proven in similar markets (MN, NC)</li>
+          <li>Co-designed curriculum centered on BIPOC perinatal experiences</li>
+          <li>Dual mission: service delivery + workforce development</li>
+          <li>Strong alignment with MCO, HRSA, and foundation priorities</li>
+        </ul>
+      </div>
+      <div class="swot-card W">
+        <div class="swot-label">⚠ Weaknesses</div>
+        <h3>Internal Gaps</h3>
+        <ul>
+          <li>Early-stage org — limited track record and outcome data</li>
+          <li>No current Medicaid billing infrastructure</li>
+          <li>Small team — capacity to absorb rapid growth is limited</li>
+          <li>Documentation and CRM systems need investment</li>
+          <li>Clinical supervision MOU not yet in place</li>
+          <li>Grant writing and development capacity limited</li>
+        </ul>
+      </div>
+      <div class="swot-card O">
+        <div class="swot-label">→ Opportunities</div>
+        <h3>External Opportunities</h3>
+        <ul>
+          <li>Indiana Medicaid doula reimbursement pathway emerging (HB 1007)</li>
+          <li>MCO appetite for cost-reduction partnerships in maternal health</li>
+          <li>HRSA Healthy Start funding available for Indianapolis high-disparity geography</li>
+          <li>Lilly Endowment health equity grantmaking cycles active</li>
+          <li>Health system community benefit (IRS Form 990H) funding available</li>
+          <li>Growing national doula evidence base — favorable policy environment</li>
+        </ul>
+      </div>
+      <div class="swot-card T">
+        <div class="swot-label">⚑ Threats</div>
+        <h3>External Risks</h3>
+        <ul>
+          <li>Medicaid reimbursement delays or policy reversal under new federal administration</li>
+          <li>MCO contracting cycles are slow (6–18 months) — cash flow risk</li>
+          <li>Workforce retention — doulas may exit for higher-paying CHW or healthcare roles</li>
+          <li>Hospital systems may develop competing in-house doula programs</li>
+          <li>Funder fatigue on health equity themes after 2023–2025 spike</li>
+          <li>Philanthropic funding cliff if grants not converted to earned revenue by Year 4</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ECOSYSTEM MAP ── -->
+<section class="section section-sage" id="ecosystem">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">🔗 Ecosystem Map</div>
+      <h2 class="section-title">Referral & Funding Flow Ecosystem</h2>
+      <p class="section-lead">Mapping the clinical, Medicaid/MCO, public health, philanthropic, and employer flows that connect IBEDC to clients, funders, and referral networks.</p>
+    </div>
+
+    <div class="ecosystem">
+      <!-- Referral Inflows -->
+      <div class="eco-row">
+        <div class="eco-node clinical">🏥 Eskenazi OB Clinic<br><small>Warm referral</small></div>
+        <div class="eco-node clinical">🏥 IU Health OB<br><small>High-risk referral</small></div>
+        <div class="eco-node clinical">🏥 Community Health FQHC<br><small>Prenatal care</small></div>
+        <div class="eco-node public">📋 WIC Sites<br><small>Enrollment touchpoint</small></div>
+        <div class="eco-node public">🏛️ MCPHD<br><small>Community referral</small></div>
+      </div>
+      <div class="eco-arrow">▼ CLIENT REFERRALS ▼</div>
+
+      <!-- Center -->
+      <div class="eco-center">🤰 Indiana Birth Equity<br>Doula Collective (IBEDC)<br><small style="font-family:'DM Sans',sans-serif; font-weight:400; font-size:0.8rem; font-style:normal;">Doula Services + Workforce Dev</small></div>
+
+      <div class="eco-arrow">▼ FUNDING & CONTRACTING FLOWS ▼</div>
+
+      <!-- Funding flows -->
+      <div class="eco-row">
+        <div class="eco-node medicaid">💚 Medicaid MCOs<br><small>Anthem, CareSource, MHS<br>Contract $/case</small></div>
+        <div class="eco-node medicaid">💚 HRSA Healthy Start<br><small>Federal grant<br>$400K–$1.5M</small></div>
+        <div class="eco-node phil">💜 Lilly Endowment<br><small>Health equity grant<br>$250K–$1M</small></div>
+        <div class="eco-node phil">💜 RWJF / Kresge<br><small>National foundations<br>$200K–$500K</small></div>
+        <div class="eco-node public">🏛️ IDOH Title V<br><small>State sub-grants<br>$50K–$200K</small></div>
+        <div class="eco-node employer">💛 Self-Insured Employers<br><small>IU, Eli Lilly, Salesforce<br>Benefit contracts</small></div>
+      </div>
+
+      <div class="eco-legend">
+        <div class="eco-legend-item"><div class="eco-dot" style="background:#5B95E0;"></div>Clinical / Hospital</div>
+        <div class="eco-legend-item"><div class="eco-dot" style="background:#5BAB65;"></div>Medicaid / Government</div>
+        <div class="eco-legend-item"><div class="eco-dot" style="background:#E08B5B;"></div>Public Health</div>
+        <div class="eco-legend-item"><div class="eco-dot" style="background:#9B5BE0;"></div>Philanthropy</div>
+        <div class="eco-legend-item"><div class="eco-dot" style="background:#C0A02A;"></div>Employer / Private</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAM MODEL ── -->
+<section class="section section-dark" id="model">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">📐 Section 5</div>
+      <h2 class="section-title">Program Model & Theory of Change</h2>
+      <p class="section-lead">IBEDC's doula service model delivers high-touch, culturally-responsive support across the full perinatal continuum — from early pregnancy through 12 months postpartum.</p>
+    </div>
+
+    <div class="card-grid card-grid-3" style="margin-bottom:2.5rem;">
+      <div class="card card-dark">
+        <div class="card-icon">🤝</div>
+        <h3>Prenatal Support (6–8 visits)</h3>
+        <p>Birth plan development, care navigation, SDOH screening (housing, food, DV, transportation), perinatal mental health check-ins, and provider communication support.</p>
+      </div>
+      <div class="card card-dark">
+        <div class="card-icon">👶</div>
+        <h3>Labor & Birth Support</h3>
+        <p>Continuous one-on-one doula presence during labor and delivery. Physical comfort measures, emotional support, advocacy, and birth partner coaching. Reduces C-sections, epidurals, and NICU admissions.</p>
+      </div>
+      <div class="card card-dark">
+        <div class="card-icon">🌸</div>
+        <h3>Postpartum Support (6+ visits over 12 weeks)</h3>
+        <p>Edinburgh PMAD screening, breastfeeding support and lactation navigation, newborn care education, family bonding support, community resource connection, and referral to mental health services.</p>
+      </div>
+    </div>
+
+    <!-- Logic Chain -->
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--cream); margin-bottom:1rem;">Theory of Change: Logic Chain</h3>
+    <div class="logic-chain">
+      <div class="logic-step">
+        <div class="logic-box inputs">
+          <div class="logic-type">Inputs</div>
+          <ul>
+            <li>Trained, certified community doulas</li>
+            <li>Grant & MCO funding</li>
+            <li>Clinical supervision MOU</li>
+            <li>CRM & documentation tools</li>
+            <li>Referral partnerships</li>
+          </ul>
+        </div>
+      </div>
+      <div class="logic-step">
+        <div class="logic-box activities">
+          <div class="logic-type">Activities</div>
+          <ul>
+            <li>Prenatal home visits (6–8x)</li>
+            <li>Labor & delivery support</li>
+            <li>Postpartum visits (6+)</li>
+            <li>PMAD screening & referral</li>
+            <li>Lactation navigation</li>
+            <li>SDOH screening & warm referral</li>
+          </ul>
+        </div>
+      </div>
+      <div class="logic-step">
+        <div class="logic-box outputs">
+          <div class="logic-type">Outputs</div>
+          <ul>
+            <li>Clients served (target: 250/yr)</li>
+            <li>% attended labor (target: 85%)</li>
+            <li>Doulas trained & certified</li>
+            <li>SDOH referrals completed</li>
+            <li>PMAD screens administered</li>
+          </ul>
+        </div>
+      </div>
+      <div class="logic-step">
+        <div class="logic-box outcomes">
+          <div class="logic-type">Outcomes</div>
+          <ul>
+            <li>↓ C-section rate (target: −20%)</li>
+            <li>↓ Preterm birth (−15%)</li>
+            <li>↑ Breastfeeding at 6wks (+25%)</li>
+            <li>↓ Readmissions (−30%)</li>
+            <li>↑ PMAD identification & treatment</li>
+            <li>Living-wage doula jobs created</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="note" style="background:rgba(201,144,12,0.15); border-color:var(--gold);">
+      <strong>Evidence base:</strong> Cochrane Review (Bohren et al., 2017) — continuous labor support reduced C-sections by 25%, shortened labor by 41 min, increased satisfaction. Kozhimannil et al. (2013) — Medicaid-enrolled women with doulas had 40.9% lower odds of C-section. DONA International standards inform the training and certification model.
+    </div>
+  </div>
+</section>
+
+<!-- ── WORKFORCE ── -->
+<section class="section" id="workforce">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">👩‍💼 Section 6</div>
+      <h2 class="section-title">Workforce Development & Talent Pipeline</h2>
+      <p class="section-lead">IBEDC's workforce strategy treats community doulas not just as service providers but as economic development participants — creating living-wage, career-ladder employment for community members most affected by birth inequity.</p>
+    </div>
+
+    <div class="card-grid card-grid-2" style="margin-bottom:2rem;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; margin-bottom:1rem;">Career Ladder</h3>
+        <div class="ladder">
+          <div class="rung">
+            <div class="rung-level">1</div>
+            <div class="rung-info">
+              <div class="rung-title">Trainee Doula</div>
+              <div class="rung-wage">$15/hr | Paid apprenticeship, 3–6 months</div>
+            </div>
+          </div>
+          <div class="rung">
+            <div class="rung-level">2</div>
+            <div class="rung-info">
+              <div class="rung-title">Certified Community Doula</div>
+              <div class="rung-wage">$18–$20/hr | Full-time employee | DONA or CAPPA certified</div>
+            </div>
+          </div>
+          <div class="rung">
+            <div class="rung-level">3</div>
+            <div class="rung-info">
+              <div class="rung-title">Lead Doula</div>
+              <div class="rung-wage">$22–$25/hr | Supervises 2–3 trainees | Complex case support</div>
+            </div>
+          </div>
+          <div class="rung">
+            <div class="rung-level">4</div>
+            <div class="rung-info">
+              <div class="rung-title">Doula Trainer / Educator</div>
+              <div class="rung-wage">$28–$32/hr | Curriculum delivery | CE provider</div>
+            </div>
+          </div>
+          <div class="rung">
+            <div class="rung-level">5</div>
+            <div class="rung-info">
+              <div class="rung-title">Program Director / Supervisor</div>
+              <div class="rung-wage">$45–$55K salaried | Clinical oversight | Community health leadership</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; margin-bottom:1rem;">Workforce Pipeline & Equity</h3>
+        <div class="card card-accent" style="margin-bottom:1rem;">
+          <h3>Recruitment Channels</h3>
+          <p>Partner with community colleges (Ivy Tech, IUPUI), faith communities, WIC sites, and community health centers. Target women of color, first-generation college students, and returning workforce participants. Bilingual (Spanish) candidates actively recruited.</p>
+        </div>
+        <div class="card card-sage">
+          <h3>Training & Certification</h3>
+          <p>DONA International or CAPPA certification pathway (16-hour training + 2–5 births observed). IBEDC supplements with: perinatal mental health screening (PSI), SDOH screening (PRAPARE), CPR/first aid, Motivational Interviewing, and anti-racism training.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Workforce Outcome Metric</th>
+            <th>Year 1 Target</th>
+            <th>Year 2 Target</th>
+            <th>Year 3 Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Doulas recruited and enrolled in training</td>
+            <td>12</td>
+            <td>20</td>
+            <td>28</td>
+          </tr>
+          <tr>
+            <td>Credentials earned (DONA/CAPPA)</td>
+            <td>8</td>
+            <td>16</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <td>Employees retained at 6 months</td>
+            <td>80%</td>
+            <td>82%</td>
+            <td>85%</td>
+          </tr>
+          <tr>
+            <td>Employees retained at 12 months</td>
+            <td>65%</td>
+            <td>70%</td>
+            <td>75%</td>
+          </tr>
+          <tr>
+            <td>% earning living wage ($18+/hr)</td>
+            <td>60%</td>
+            <td>75%</td>
+            <td>85%</td>
+          </tr>
+          <tr>
+            <td>Promotions to Lead Doula or higher</td>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>% from communities served (BIPOC / low-income)</td>
+            <td>75%</td>
+            <td>78%</td>
+            <td>80%</td>
+          </tr>
+          <tr>
+            <td>Bilingual (English/Spanish) doulas</td>
+            <td>3</td>
+            <td>5</td>
+            <td>8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <strong>Caseload reality:</strong> Each full-time community doula carries 20–25 active clients/year (based on industry standard of 2–3 active births/month). At 20 clients/doula, 10 FTE doulas serve 200 clients/year. Schedule must account for on-call availability for labor support, requiring at minimum a 3-person on-call rotation at any given time.
+    </div>
+  </div>
+</section>
+
+<!-- ── UNIT ECONOMICS ── -->
+<section class="section section-alt" id="economics">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">💰 Section 7</div>
+      <h2 class="section-title">Unit Economics & Sustainability</h2>
+      <p class="section-lead">Transparent cost-revenue model for a community doula organization serving 250 clients/year at full scale (Year 3). All assumptions clearly labeled.</p>
+    </div>
+
+    <div class="unit-grid">
+      <div class="unit-card" style="background:var(--cream);">
+        <h4>💸 Cost Per Client (Full Service)</h4>
+        <div class="unit-row"><span>Direct doula labor (15hrs × $20/hr)</span><span class="amt neg">$300</span></div>
+        <div class="unit-row"><span>Benefits & payroll taxes (30%)</span><span class="amt neg">$90</span></div>
+        <div class="unit-row"><span>Clinical supervision / MOU</span><span class="amt neg">$50</span></div>
+        <div class="unit-row"><span>Training & CEU amortized</span><span class="amt neg">$40</span></div>
+        <div class="unit-row"><span>Admin / overhead (20%)</span><span class="amt neg">$96</span></div>
+        <div class="unit-row"><span>Transport / supplies / tech</span><span class="amt neg">$50</span></div>
+        <div class="unit-row"><span><strong>Total Cost Per Client</strong></span><span class="amt total">$626</span></div>
+      </div>
+
+      <div class="unit-card" style="background:var(--cream);">
+        <h4>📈 Revenue Per Client (Blended)</h4>
+        <div class="unit-row"><span>Medicaid MCO contract (est. $800/client)</span><span class="amt pos">$480</span></div>
+        <div class="unit-row" style="color:var(--muted); font-size:0.78rem;"><span style="padding-left:0.75rem;">↳ Assumes 60% of clients Medicaid-covered</span></div>
+        <div class="unit-row"><span>Grants (foundation + govt, amortized)</span><span class="amt pos">$150</span></div>
+        <div class="unit-row"><span>Health system CBE / subcontract</span><span class="amt pos">$80</span></div>
+        <div class="unit-row"><span>Employer / self-pay (sliding scale)</span><span class="amt pos">$30</span></div>
+        <div class="unit-row"><span><strong>Total Revenue Per Client</strong></span><span class="amt total">$740</span></div>
+        <div class="unit-row"><span><strong>Surplus (Deficit) Per Client</strong></span><span class="amt pos">+$114</span></div>
+      </div>
+
+      <div class="unit-card" style="background:var(--cream);">
+        <h4>📊 Break-Even Scenarios</h4>
+        <div class="unit-row"><span>Clients needed at $626 avg cost</span><span class="amt">—</span></div>
+        <div class="unit-row"><span>Break-even @ $700 MCO rate (60% Medicaid)</span><span class="amt">≈180 clients</span></div>
+        <div class="unit-row"><span>Break-even @ $800 MCO rate (60%)</span><span class="amt">≈140 clients</span></div>
+        <div class="unit-row"><span>Break-even @ 80% Medicaid + $800 rate</span><span class="amt">≈110 clients</span></div>
+        <div class="unit-row"><span><strong>Target (grant-covered deficit, Yr 1)</strong></span><span class="amt total">100 clients</span></div>
+      </div>
+    </div>
+
+    <!-- Sensitivity Chart -->
+    <div class="chart-container fade-in">
+      <div class="chart-title">Sensitivity Analysis: Annual Surplus/(Deficit) by Caseload & MCO Rate — Year 3 Target (250 clients, $750K operating budget)</div>
+      <canvas id="sensitivityChart"></canvas>
+    </div>
+
+    <div class="note">
+      <strong>Key assumptions:</strong> Medicaid MCO reimbursement estimated at $700–$900/client bundle (comparable to Minnesota doula program at $411–$1,422 depending on births attended). Labor cost assumes 15 hours total service per client. Overhead at 20% is conservative for an emerging nonprofit. Year 1 assumes 60% grant-funded; Year 3 assumes 60% earned revenue. All figures in 2025 dollars.
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. CUSTOMER SEGMENTS ── -->
+<section class="section" id="segments">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">🎯 Section 4</div>
+      <h2 class="section-title">Customer Segments & Buyer Behavior</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Role</th>
+            <th>Decision Criteria</th>
+            <th>Key Proof Points Needed</th>
+            <th>Barriers to Adoption</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Birthing People (Medicaid)</strong></td>
+            <td>User / Beneficiary</td>
+            <td>Trust, cultural safety, availability, cost ($0 co-pay)</td>
+            <td>Testimonials, community presence, language access</td>
+            <td>Medical mistrust, not knowing doulas exist, transportation</td>
+          </tr>
+          <tr>
+            <td><strong>Medicaid MCOs</strong></td>
+            <td>Primary Payer / Buyer</td>
+            <td>Cost savings (C-section, NICU, readmission reduction), HEDIS metrics improvement, member satisfaction</td>
+            <td>ROI analysis, outcome data, NCQA-aligned reporting, comparable program results</td>
+            <td>Contracting complexity, no established billing codes (yet), attribution challenge</td>
+          </tr>
+          <tr>
+            <td><strong>Health Systems</strong></td>
+            <td>Funder / Referral / Employer</td>
+            <td>Community benefit obligation (IRS 990H), quality metrics (HCAHPS, C-section rates), workforce pipeline</td>
+            <td>Quality data, liability MOU, seamless referral workflow, staff buy-in from OB teams</td>
+            <td>Turf concerns, liability fear, unfamiliarity with community doula model</td>
+          </tr>
+          <tr>
+            <td><strong>Public Health Departments</strong></td>
+            <td>Funder / Co-referral</td>
+            <td>Population-level disparity reduction, Title V deliverables, community trust</td>
+            <td>Alignment with Title V priority areas; data-sharing capacity; community embedding</td>
+            <td>Bureaucratic procurement processes; year-to-year funding uncertainty</td>
+          </tr>
+          <tr>
+            <td><strong>Foundations</strong></td>
+            <td>Primary Funder (early stage)</td>
+            <td>Equity focus, evidence base, leadership credibility, sustainability plan</td>
+            <td>Needs data, logic model, diverse leadership, 3-year financial projections</td>
+            <td>Competitive grant market; must stand out from peer health equity orgs</td>
+          </tr>
+          <tr>
+            <td><strong>Self-Insured Employers</strong></td>
+            <td>Emerging Payer</td>
+            <td>Employee satisfaction, maternity benefit competitiveness, reduced NICU/L&D costs</td>
+            <td>Employee benefit ROI, peer employer adoption (Salesforce, Apple precedents), HR buy-in</td>
+            <td>Slow procurement, HR resistance, short employee tenure in lower-wage jobs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── RISKS ── -->
+<section class="section section-alt" id="risks">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">⚠️ Section 8</div>
+      <h2 class="section-title">Risk Register & Mitigation</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Risk</th>
+            <th>Category</th>
+            <th>Severity</th>
+            <th>Probability</th>
+            <th>Mitigation</th>
+            <th>Early Warning Signal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Medicaid reimbursement not finalized by Year 2</td>
+            <td>Financial / Regulatory</td>
+            <td><span class="risk-indicator" style="background:#E05A2A;"></span>High</td>
+            <td>Medium</td>
+            <td>Maintain 70%+ grant-funded Year 1–2; begin MCO direct contracting as bridge</td>
+            <td>FSSA rulemaking stalls >12 months</td>
+          </tr>
+          <tr>
+            <td>Doula turnover &gt;40% annually</td>
+            <td>Operational</td>
+            <td><span class="risk-indicator" style="background:#E05A2A;"></span>High</td>
+            <td>Medium-High</td>
+            <td>Living wage from Day 1, benefits package, peer support, career ladder clarity</td>
+            <td>Exit interview themes; retention rate &lt;70% at 6 months</td>
+          </tr>
+          <tr>
+            <td>MCO contracting cycle &gt;18 months</td>
+            <td>Financial</td>
+            <td><span class="risk-indicator" style="background:#C9900C;"></span>Medium</td>
+            <td>High</td>
+            <td>Bridge grant; health system sub-contract as revenue bridge</td>
+            <td>No signed MCO contract by Month 12</td>
+          </tr>
+          <tr>
+            <td>HIPAA / data breach incident</td>
+            <td>Compliance</td>
+            <td><span class="risk-indicator" style="background:#E05A2A;"></span>High</td>
+            <td>Low</td>
+            <td>HIPAA training, BAAs with all tech vendors, cyber liability insurance</td>
+            <td>Near-miss data incidents; vendor security assessments</td>
+          </tr>
+          <tr>
+            <td>Scope creep / doulas providing clinical advice</td>
+            <td>Operational / Legal</td>
+            <td><span class="risk-indicator" style="background:#E05A2A;"></span>High</td>
+            <td>Low-Medium</td>
+            <td>Ongoing scope-of-practice training; clinical supervision; incident review process</td>
+            <td>Client complaints; clinical partner concerns</td>
+          </tr>
+          <tr>
+            <td>Foundation funding cliff (Year 4+)</td>
+            <td>Financial</td>
+            <td><span class="risk-indicator" style="background:#C9900C;"></span>Medium</td>
+            <td>Medium</td>
+            <td>Earned revenue path via MCO + health system by Year 3; pursue endowment conversations</td>
+            <td>Earned revenue &lt;40% by end of Year 2</td>
+          </tr>
+          <tr>
+            <td>Hospital develops competing in-house program</td>
+            <td>Competitive</td>
+            <td><span class="risk-indicator" style="background:#5BAB65;"></span>Low</td>
+            <td>Low</td>
+            <td>Community trust is differentiator; position as preferred community partner, not competitor</td>
+            <td>Hospital job postings for "hospital doulas"; withdrawal of referrals</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── REFERENCES ── -->
+<section class="section section-gold">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">📚 Sources & Citations</div>
+      <h2 class="section-title">Key References</h2>
+    </div>
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <h3>Clinical Evidence</h3>
+        <p style="font-size:0.8rem; line-height:1.7;">
+          Bohren MA, et al. (2017). Continuous support for women during childbirth. <em>Cochrane Database of Systematic Reviews.</em><br><br>
+          Kozhimannil KB, et al. (2013). Doula care, birth outcomes, and costs among Medicaid beneficiaries. <em>American Journal of Public Health.</em><br><br>
+          Gruber KJ, et al. (2013). Impact of doulas on healthy birth outcomes. <em>Journal of Perinatal Education.</em>
+        </p>
+      </div>
+      <div class="card">
+        <h3>Indiana Data Sources</h3>
+        <p style="font-size:0.8rem; line-height:1.7;">
+          Indiana Department of Health (IDOH). <em>Maternal Mortality Review Committee Reports 2020–2023.</em><br><br>
+          March of Dimes. (2023). <em>Premature Birth Report Card: Indiana.</em><br><br>
+          Centers for Disease Control and Prevention. CDC WONDER — Indiana Natality and Mortality Data, 2018–2022.<br><br>
+          Indiana Business Research Center / ACS 2022. Marion County demographic and economic profiles.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Policy & Reimbursement</h3>
+        <p style="font-size:0.8rem; line-height:1.7;">
+          Indiana HB 1007 (2024). <em>Doula Services Study.</em><br><br>
+          FSSA/OMPP. (2025). <em>Medicaid managed care plan contracts — Hoosier Healthwise, HIP 2.0.</em><br><br>
+          CMS. (2024). <em>Transforming Maternal Health Model Overview.</em> cms.gov.<br><br>
+          National Health Law Program. (2023). <em>Medicaid Coverage of Doula Services: State-by-State Review.</em>
+        </p>
+      </div>
+      <div class="card">
+        <h3>Workforce & Certification</h3>
+        <p style="font-size:0.8rem; line-height:1.7;">
+          DONA International. (2023). <em>Standards for Doula Certification.</em> dona.org.<br><br>
+          Postpartum Support International (PSI). <em>Edinburgh Postnatal Depression Scale (EPDS) — training resources.</em><br><br>
+          National Academy for State Health Policy (NASHP). (2024). <em>State Doula Policy Tracker.</em><br><br>
+          PRAPARE Social Needs Screening Tool. National Association of Community Health Centers (NACHC).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <strong>Indiana Birth Equity Doula Collective (IBEDC)</strong><br>
+  Indianapolis, Indiana · Marion County Focus Area · Serving Central Indiana<br><br>
+  This analysis was prepared to support organizational strategy, grant applications, and partnership development (2025–2027).<br>
+  All statistics represent the best available evidence as of Q1 2025. Local assumptions are clearly labeled throughout.<br><br>
+  <span style="color:rgba(250,247,242,0.35); font-size:0.72rem;">For hosting: deploy via GitHub Pages (see README) or Netlify. All assets use Google Fonts (SIL OFL/Apache) and Chart.js (MIT license).</span>
+</footer>
+
+<!-- ── SCRIPTS ── -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+  // Mobile nav toggle
+  const hamburger = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Chart 1: Disparities
+  const dispCtx = document.getElementById('disparitiesChart').getContext('2d');
+  Chart.defaults.font.family = "'DM Sans', sans-serif";
+  new Chart(dispCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Preterm Birth Rate (%)', 'Low Birthweight Rate (%)', 'Maternal Mortality\n(per 100K)', 'C-Section Rate (%)', 'Breastfeeding\nat 6 Weeks (%)'],
+      datasets: [
+        {
+          label: 'Black / African American',
+          data: [14.8, 9.8, 52.7, 38, 42],
+          backgroundColor: 'rgba(192,90,42,0.85)',
+          borderRadius: 6,
+        },
+        {
+          label: 'Hispanic / Latina',
+          data: [11.2, 6.9, 18.0, 28, 55],
+          backgroundColor: 'rgba(91,123,111,0.85)',
+          borderRadius: 6,
+        },
+        {
+          label: 'White',
+          data: [9.4, 5.8, 17.0, 31, 64],
+          backgroundColor: 'rgba(201,144,12,0.75)',
+          borderRadius: 6,
+        },
+        {
+          label: 'Indiana Overall',
+          data: [11.0, 7.1, 28.0, 33, 58],
+          backgroundColor: 'rgba(90,90,90,0.5)',
+          borderRadius: 6,
+          borderDash: [5,5],
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            afterLabel: () => 'Source: IDOH / CDC WONDER 2022–23 (est.)'
+          }
+        }
+      },
+      scales: {
+        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+
+  // Chart 2: Sensitivity Analysis
+  const sensCtx = document.getElementById('sensitivityChart').getContext('2d');
+  const caseloads = [100, 150, 200, 250, 300];
+  function calcSurplus(clients, mcoRate, medicaidPct) {
+    const revenue = clients * (mcoRate * medicaidPct + 150 + 80 + 30); // grant + health system + other
+    const cost = clients * 626 + 180000; // per-client + fixed overhead
+    return (revenue - cost) / 1000;
+  }
+  new Chart(sensCtx, {
+    type: 'line',
+    data: {
+      labels: caseloads.map(c => c + ' clients'),
+      datasets: [
+        {
+          label: '$900 MCO Rate (60% Medicaid)',
+          data: caseloads.map(c => Math.round(c * (900*0.6 + 260) - c*626 - 180000)),
+          borderColor: '#5BAB65',
+          backgroundColor: 'rgba(91,171,101,0.1)',
+          fill: true,
+          tension: 0.4,
+          borderWidth: 2.5,
+          pointRadius: 5,
+        },
+        {
+          label: '$800 MCO Rate (60% Medicaid)',
+          data: caseloads.map(c => Math.round(c * (800*0.6 + 260) - c*626 - 180000)),
+          borderColor: '#C9900C',
+          backgroundColor: 'rgba(201,144,12,0.08)',
+          fill: true,
+          tension: 0.4,
+          borderWidth: 2.5,
+          pointRadius: 5,
+        },
+        {
+          label: '$700 MCO Rate (60% Medicaid)',
+          data: caseloads.map(c => Math.round(c * (700*0.6 + 260) - c*626 - 180000)),
+          borderColor: '#E05A2A',
+          backgroundColor: 'rgba(224,90,42,0.08)',
+          fill: true,
+          tension: 0.4,
+          borderWidth: 2.5,
+          pointRadius: 5,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `${ctx.dataset.label}: $${ctx.parsed.y.toLocaleString()}`
+          }
+        }
+      },
+      scales: {
+        y: {
+          title: { display: true, text: 'Annual Surplus/(Deficit) in $' },
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: {
+            callback: (v) => '$' + (v >= 0 ? '' : '(') + Math.abs(v).toLocaleString() + (v < 0 ? ')' : '')
+          }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+</script>
+</body>
+</html>
